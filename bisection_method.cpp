@@ -14,6 +14,10 @@ double f(double x) {
     double exp = pow(x, 3) - 3*x + 1;
     return exp;
 }
+double g(double x) {
+    double exp = pow(x, 3) - 2*sin(x);
+    return exp;
+}
 void Bisection(function<double(double)> f, double a, double b, int nmax) {
     double c, fa, fb, fc, error;
     fa = f(a);
@@ -46,4 +50,5 @@ void Bisection(function<double(double)> f, double a, double b, int nmax) {
 int32_t main() {
    
     Bisection(f, 0.0, 1.0, 26);
+    Bisection(g, 0.5, 2.0, 26);
 }
